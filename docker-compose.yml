@@ -1,0 +1,10 @@
+
+version: "3"
+
+services:
+  downloader:
+    build: ./downloader
+    container_name: "pipdownloader"
+    volumes:
+      - ./pip_pkgs/:/pip_pkgs
+    command: bash -c  "cp -r /pip/* /pip_pkgs"
